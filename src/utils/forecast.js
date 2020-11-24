@@ -13,7 +13,8 @@ const forecast = (lat, log, callback) => {
             const forecast=  body.current.weather_descriptions[0];
             const temp = body.current.temperature;
             const feelsLike = body.current.feelslike;
-            callback(undefined, forecast + 'The current temperature is ' +temp + 'F. It feels like '+feelsLike+' F');
+            const humidity = body.current.humidity;
+            callback(undefined, forecast + 'The current temperature is ' +temp + 'F. It feels like '+feelsLike+' F. Humidity is +' + humidity +"%." );
         }
 
     })
